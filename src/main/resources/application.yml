@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: app
+          uri: http://localhost:8080/
+          predicates:
+            - Path=/api/products/**
+        - id: CalculatorMicroservice
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/api/mwst/**
